@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-task5</title>
+    <style>
+        label{
+            display:inline-block;
+            width:200px;
+        }
+        input,textarea{
+            border:3px solid red;
+        }
+        span{
+            color: red;
+        }
+        button{
+            margin-left:auto;
+            margin-right:auto;
+        }
+    </style>
+</head>
+<body>
+    <form name="form">
+        <label>name</label>
+        <input type="text" name="name"/><span  id="i1"></span>
+        <br><br>
+        <label>Email</label>
+        <input type="text" name="email"/><span id="i2"></span>
+        <br><br>
+        <label>Url</label>
+        <input type="url" name="url"/><span id="i3"></span>
+        <br><br>
+        <label style="margin-bottom:-10px;">Message</label>
+        <textarea type="text" name="message"></textarea><span id="i4"></span>
+        <br><br>
+        <button  type="button" onclick="validate()">submit</button>
+        <script>
+            function validate(){
+                let name=document.form.name.value;
+                let email=document.form.email.value;
+                let url=document.form.url.value;
+                let message=document.form.message.value;
+                
+                //To validate name
+                if(name.length==0){
+                    document.getElementById("i1").innerHTML="This field is required";
+                }
+
+                //To validate email id
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                if(!emailRegex.test(email)){
+                        document.getElementById("i2").innerHTML="A vaild email address is required";
+                }
+                
+                //To validate url
+                const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+                if(!urlRegex.test(url)){
+                    document.getElementById("i3").innerHTML="A valid url is required";
+                }
+
+
+                //To validate message
+                if(message.length==0){
+                    document.getElementById("i4").innerHTML="This field is required";
+                }
+               
+
+
+
+            }
+
+        </script>
+
+    </form>
+</body>
+</html>

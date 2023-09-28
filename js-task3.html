@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-task3</title>
+    <style>
+        label{
+            display:inline-block;
+            width:200px;
+        }
+        input{
+            width: 200px;
+
+        }
+        .c1{  
+            display:inline-block; 
+            
+        }
+        .main{
+            margin:auto;
+            width:40%;
+            padding: 10px;
+            border:1px solid black;
+            position: relative;
+    
+        }
+        input{
+            width:300px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+    <form name="form">
+            <div>
+            <label> 1st Number</label>
+            <input  type="number" name="num1" />
+             </div>
+             <br>
+             <div>
+            <label>2nd Number</label>
+            <input type="number2" name="num2"/>
+        </div>
+        
+        <div class="c1">
+            <button  type="button" onclick="multiply()">multiply</button>
+        </div>
+        
+        <div class="c1">
+                <button  type="button" onclick="divide()">divide</button>
+        </div>
+        </form>
+        <p id="i1"></p>
+    </div>
+    <script>
+        function multiply(){
+            let num1=document.form.num1.value;
+            let num2=document.form.num2.value;
+            let result=num1 * num2;
+            document.getElementById("i1").innerHTML="The result is "+result;
+
+        }
+        function divide(){
+            let num1=document.form.num1.value;
+            let num2=document.form.num2.value;
+            let result=num1 / num2;
+            document.getElementById("i1").innerHTML="The result is "+result;
+        }
+
+    </script>
+</body>
+</html
